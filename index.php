@@ -31,6 +31,7 @@ if ( isset($_POST['content']) && isset($_POST['name']) && isset($_POST['json']) 
 
 ?>
 <!DOCTYPE html>
+<!-- Code and site made by Furious -->
 
 <head>
 
@@ -47,7 +48,7 @@ if ( isset($_POST['content']) && isset($_POST['name']) && isset($_POST['json']) 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
 
-    <script src="https://dolor.ml/furiouschat/js/emoji.js"></script>
+    <script src="js/emoji.js"></script>
 
     <!-- Bots -->
     <script src="js/bots/bot.js"></script>
@@ -573,12 +574,16 @@ if ( isset($_POST['content']) && isset($_POST['name']) && isset($_POST['json']) 
 
         function resetImg() {
             $.post("api/avatar.php", { 'user': localStorage["user"], 'img': 'https://dolor.ml/noxy.jpg' });
+            localStorage.clear("img");
+            initData();
+            location.reload();
         }
 
         function setImage(img) {
             $.post("api/avatar.php", { 'user': localStorage["user"], 'img': img });
             localStorage.clear("img");
             initData();
+            location.reload();
         }
 
         function getImage() {
