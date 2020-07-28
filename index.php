@@ -31,7 +31,6 @@ if ( isset($_POST['content']) && isset($_POST['name']) && isset($_POST['json']) 
 
 ?>
 <!DOCTYPE html>
-<!-- Code and site made by Furious -->
 
 <head>
 
